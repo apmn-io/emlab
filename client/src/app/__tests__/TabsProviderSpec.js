@@ -29,12 +29,13 @@ describe('TabsProvider', function() {
   });
 
 
-  it('should provide BPMN, CMMN, DMN and empty tab', function() {
+  it('should provide APMN BPMN, CMMN, DMN and empty tab', function() {
 
     // given
     const tabsProvider = new TabsProvider();
 
     // then
+    expect(tabsProvider.getProvider('apmn')).to.exist;
     expect(tabsProvider.getProvider('bpmn')).to.exist;
     expect(tabsProvider.getProvider('cmmn')).to.exist;
     expect(tabsProvider.getProvider('dmn')).to.exist;
@@ -67,6 +68,7 @@ describe('TabsProvider', function() {
     };
 
     // then
+    expect(tabsProvider.getProvider('apmn').exports).to.eql(expected);
     expect(tabsProvider.getProvider('bpmn').exports).to.eql(expected);
     expect(tabsProvider.getProvider('cmmn').exports).to.eql(expected);
     expect(tabsProvider.getProvider('dmn').exports).to.eql(expected);
@@ -93,6 +95,8 @@ describe('TabsProvider', function() {
       });
     }
 
+    verifyExists('apmn');
+
     verifyExists('bpmn');
 
     verifyExists('cmmn');
@@ -108,8 +112,8 @@ describe('TabsProvider', function() {
 
     // given
     const tabsProvider = new TabsProvider();
-
     // then
+    expect(tabsProvider.createTab('apmn')).to.exist;
     expect(tabsProvider.createTab('bpmn')).to.exist;
     expect(tabsProvider.createTab('cmmn')).to.exist;
     expect(tabsProvider.createTab('dmn', { table: true })).to.exist;
@@ -125,6 +129,7 @@ describe('TabsProvider', function() {
       const tabsProvider = new TabsProvider();
 
       // then
+      expect(await tabsProvider.getTabComponent('apmn')).to.exist;
       expect(await tabsProvider.getTabComponent('bpmn')).to.exist;
       expect(await tabsProvider.getTabComponent('cmmn')).to.exist;
       expect(await tabsProvider.getTabComponent('dmn', { table: true })).to.exist;
@@ -143,8 +148,8 @@ describe('TabsProvider', function() {
       const tabsProvider = new TabsProvider();
 
       const file = {
-        name: 'foo.bpmn',
-        path: '/a/foo.bpmn'
+        name: 'foo.apmn',
+        path: '/a/foo.apmn'
       };
 
       // when
@@ -153,7 +158,7 @@ describe('TabsProvider', function() {
       // then
       expect(tab.name).to.eql(file.name);
       expect(tab.title).to.eql(file.path);
-      expect(tab.type).to.eql('bpmn');
+      expect(tab.type).to.eql('apmn');
     });
 
 
@@ -227,6 +232,7 @@ describe('TabsProvider', function() {
     const providers = tabsProvider.getProviders();
 
     // then
+    expect(providers['apmn']).to.exist;
     expect(providers['bpmn']).to.exist;
     expect(providers['cmmn']).to.exist;
     expect(providers['dmn']).to.exist;
@@ -243,7 +249,7 @@ describe('TabsProvider', function() {
     const providerNames = tabsProvider.getProviderNames();
 
     // then
-    expect(providerNames).to.eql([ 'BPMN', 'CMMN', 'DMN' ]);
+    expect(providerNames).to.eql([ 'APMN', 'BPMN', 'CMMN', 'DMN' ]);
   });
 
 

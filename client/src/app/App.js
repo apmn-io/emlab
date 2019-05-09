@@ -1395,6 +1395,10 @@ export class App extends PureComponent {
       return;
     }
 
+    if (action === 'create-apmn-diagram') {
+      return this.createDiagram('apmn');
+    }
+
     if (action === 'create-bpmn-diagram') {
       return this.createDiagram('bpmn');
     }
@@ -1636,6 +1640,11 @@ export class App extends PureComponent {
               <DropdownButton
                 title="Create diagram"
                 items={ [
+                  {
+                    text: 'Create new APMN diagram',
+                    onClick: this.composeAction('create-apmn-diagram'),
+                    type: 'apmn'
+                  },
                   {
                     text: 'Create new BPMN diagram',
                     onClick: this.composeAction('create-bpmn-diagram'),

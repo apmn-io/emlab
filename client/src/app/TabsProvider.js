@@ -10,6 +10,7 @@
 
 import Ids from 'ids';
 
+import apmnDiagram from './tabs/apmn/diagram.apmn';
 import bpmnDiagram from './tabs/bpmn/diagram.bpmn';
 import cmmnDiagram from './tabs/cmmn/diagram.cmmn';
 import dmnDiagram from './tabs/dmn/diagram.dmn';
@@ -70,6 +71,38 @@ export default class TabsProvider {
       empty: {
         getComponent() {
           return EmptyTab;
+        }
+      },
+      apmn: {
+        name: 'APMN',
+        encoding: ENCODING_UTF8,
+        exports: {
+          png: EXPORT_PNG,
+          jpeg: EXPORT_JPEG,
+          svg: EXPORT_SVG
+        },
+        extensions: [ 'apmn', 'xml' ],
+        getComponent(options) {
+          return import('./tabs/apmn');
+        },
+        getInitialContents(options) {
+          return apmnDiagram;
+        },
+        getHelpMenu() {
+          return [{
+            label: 'APMN Tutorial',
+            action: 'https://apmn.io/spec/APMN/'
+          },
+          {
+            label: 'APMN Modeling Reference',
+            action: 'https://apmn.io/spec/APMN/'
+          }];
+        },
+        getNewFileMenu() {
+          return [{
+            label: 'APMN Diagram',
+            action: 'create-apmn-diagram'
+          }];
         }
       },
       bpmn: {

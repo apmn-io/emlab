@@ -42,6 +42,16 @@ npm run dev
 ```
 
 
+### Debuging the Application
+
+```
+npm run client:build && electron ./app
+
+Debuing from first line
+npm run client:build && electron ./app --inspect-brk=5858
+```
+
+
 ## License
 
 MIT

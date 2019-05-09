@@ -40,8 +40,8 @@ const {
   mac
 } = argv;
 
+// (argv.ia32 || !argv.x64) && 'ia32',
 const archs = [
-  (argv.ia32 || !argv.x64) && 'ia32',
   (argv.x64 || !argv.ia32) && 'x64'
 ].filter(f => f);
 

@@ -258,7 +258,7 @@ describe('<App>', function() {
 
       await app.showTab(EMPTY_TAB);
 
-      const createButton = tree.find('button.create-bpmn');
+      const createButton = tree.find('a.create-diagram');
 
       expect(createButton).to.exist;
 

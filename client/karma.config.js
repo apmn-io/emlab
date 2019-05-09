@@ -102,7 +102,7 @@ module.exports = function(karma) {
             use: 'babel-loader'
           },
           {
-            test: /\.(css|bpmn|cmmn|dmn|less|xml|png|svg)$/,
+            test: /\.(css|apmn|bpmn|cmmn|dmn|less|xml|png|svg)$/,
             use: 'raw-loader'
           }
         ]
@@ -127,6 +127,7 @@ module.exports = function(karma) {
           absoluteBasePath
         ],
         alias: {
+          'apmn-js/lib/Modeler': 'test/mocks/apmn-js/Modeler',
           'bpmn-js/lib/Modeler': 'test/mocks/bpmn-js/Modeler',
           'cmmn-js/lib/Modeler': 'test/mocks/cmmn-js/Modeler',
           'dmn-js/lib/Modeler': 'test/mocks/dmn-js/Modeler',

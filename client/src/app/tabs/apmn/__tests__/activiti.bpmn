@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<apmn:definitions
+  xmlns:apmn="http://apmn.io/spec/APMN/MODEL"
+  xmlns:apmndi="http://apmn.io/spec/APMN/DI"
+  xmlns:di="http://apmn.io/spec/DD/DI"
+  xmlns:dc="http://apmn.io/spec/DD/DC"
+  xmlns:activiti="http://activiti.org/bpmn"
+  id="Definitions_1"
+  targetNamespace="http://activiti.org/bpmn">
+  <apmn:process id="Process_1" isExecutable="true">
+    <apmn:userTask id="Task_1" activiti:assignee="foo" />
+  </apmn:process>
+  <apmndi:APMNDiagram id="APMNDiagram_1">
+    <apmndi:APMNPlane id="APMNPlane_1" apmnElement="Process_1">
+      <apmndi:APMNShape id="UserTask_0f49827_di" apmnElement="Task_1">
+        <dc:Bounds x="241" y="182" width="100" height="80" />
+      </apmndi:APMNShape>
+    </apmndi:APMNPlane>
+  </apmndi:APMNDiagram>
+</apmn:definitions>

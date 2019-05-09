@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<apmn:definitions xmlns:apmn="http://apmn.io/spec/APMN/MODEL" xmlns:apmndi="http://apmn.io/spec/APMN/DI" xmlns:dc="http://apmn.io/spec/DD/DC" id="Definitions_{{ ID }}" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.0.0-dev">
+  <apmn:process id="Process_{{ ID:process }}" isExecutable="true">
+    <apmn:startEvent id="StartEvent_1" />
+  </apmn:process>
+  <apmndi:APMNDiagram id="APMNDiagram_1">
+    <apmndi:APMNPlane id="APMNPlane_1" apmnElement="Process_{{ ID:process }}">
+      <apmndi:APMNShape id="_BPMNShape_StartEvent_2" apmnElement="StartEvent_1">
+        <dc:Bounds x="179" y="159" width="36" height="36" />
+      </apmndi:APMNShape>
+    </apmndi:APMNPlane>
+  </apmndi:APMNDiagram>
+</apmn:definitions>

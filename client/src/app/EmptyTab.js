@@ -39,20 +39,24 @@ export default class EmptyTab extends PureComponent {
       <Tab className={ css.EmptyTab }>
         <p className="create-buttons">
           <span>Create a </span>
-          <button className="create-bpmn" onClick={ () => onAction('create-bpmn-diagram') }>BPMN diagram</button>
-          {
-            !Flags.get(DISABLE_DMN) && (
-              <Fragment>
-                <span> or </span>
-                <button onClick={ () => onAction('create-dmn-diagram') }>DMN diagram</button>
-              </Fragment>
-            )
-          }
+          <a href="javascript:void(0)" onClick={ () => onAction('create-apmn-diagram') }>APMN diagram</a>
+          <span> or </span>
+          <a className="create-diagram" href="javascript:void(0)" onClick={ () => onAction('create-bpmn-diagram') }>BPMN diagram</a>
           {
             !Flags.get(DISABLE_CMMN) && (
               <Fragment>
                 <span> or </span>
-                <button onClick={ () => onAction('create-cmmn-diagram') }>CMMN diagram</button>
+                <a href="javascript:void(0)" onClick={ () => onAction('create-cmmn-diagram') }>CMMN diagram</a>
+              </Fragment>
+            )
+          }
+          {
+            !Flags.get(DISABLE_DMN) && (
+              <Fragment>
+                <span> or </span>
+                <a href="javascript:void(0)" onClick={ () => onAction('create-dmn-diagram') }>DMN diagram</a>
+                <span> or </span>
+                <a href="javascript:void(0)" onClick={ () => onAction('create-dmn-table') }>DMN table</a>
               </Fragment>
             )
           }

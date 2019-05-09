@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<apmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:apmn="http://apmn.io/spec/APMN/MODEL" xmlns:apmndi="http://apmn.io/spec/APMN/DI" xmlns:dc="http://apmn.io/spec/DD/DC" xmlns:di="http://apmn.io/spec/DD/DI" xsi:schemaLocation="http://apmn.io/spec/APMN/MODEL APMN.xsd" id="simple" exporter="camunda modeler" exporterVersion="2.6.0" targetNamespace="http://bpmn.io/schema/bpmn">
+  <apmn:process id="Process_1" isExecutable="false">
+    <apmn:subProcess id="SubProcess_1" name="Sub Process 1">
+      <apmn:incoming>SequenceFlow_3</apmn:incoming>
+      <apmn:outgoing>SequenceFlow_2</apmn:outgoing>
+      <apmn:startEvent id="StartEvent_1" name="Start Event 1">
+        <apmn:outgoing>SequenceFlow_1</apmn:outgoing>
+      </apmn:startEvent>
+      <apmn:task id="Task_1" name="Task">
+        <apmn:incoming>SequenceFlow_1</apmn:incoming>
+      </apmn:task>
+      <apmn:sequenceFlow id="SequenceFlow_1" name="" sourceRef="StartEvent_1" targetRef="Task_1"/>
+    </apmn:subProcess>
+    <apmn:endEvent id="EndEvent_1" name="End Event">
+      <apmn:incoming>SequenceFlow_2</apmn:incoming>
+    </apmn:endEvent>
+    <apmn:sequenceFlow id="SequenceFlow_2" name="" sourceRef="SubProcess_1" targetRef="EndEvent_1"/>
+    <apmn:startEvent id="StartEvent_2" name="Start">
+      <apmn:outgoing>SequenceFlow_3</apmn:outgoing>
+    </apmn:startEvent>
+    <apmn:sequenceFlow id="SequenceFlow_3" name="Flow" sourceRef="StartEvent_2" targetRef="SubProcess_1"/>
+  </apmn:process>
+  <apmndi:APMNDiagram id="APMNDiagram_1">
+    <apmndi:APMNPlane id="APMNPlane_1" apmnElement="Process_1">
+      <apmndi:APMNShape id="_BPMNShape_SubProcess_2" apmnElement="SubProcess_1" isExpanded="true">
+        <dc:Bounds height="300.0" width="300.0" x="300.0" y="80.0"/>
+      </apmndi:APMNShape>
+      <apmndi:APMNShape id="_BPMNShape_StartEvent_2" apmnElement="StartEvent_1">
+        <dc:Bounds height="36.0" width="36.0" x="352.0" y="242.0"/>
+      </apmndi:APMNShape>
+      <apmndi:APMNShape id="_BPMNShape_Task_2" apmnElement="Task_1">
+        <dc:Bounds height="80.0" width="100.0" x="420.0" y="220.0"/>
+      </apmndi:APMNShape>
+      <apmndi:APMNEdge id="APMNEdge_SequenceFlow_1" apmnElement="SequenceFlow_1" sourceElement="_BPMNShape_StartEvent_2" targetElement="_BPMNShape_Task_2">
+        <di:waypoint xsi:type="dc:Point" x="388.0" y="260.0"/>
+        <di:waypoint xsi:type="dc:Point" x="420.0" y="260.0"/>
+      </apmndi:APMNEdge>
+      <apmndi:APMNShape id="_BPMNShape_EndEvent_2" apmnElement="EndEvent_1">
+        <dc:Bounds height="36.0" width="36.0" x="650.0" y="212.0"/>
+      </apmndi:APMNShape>
+      <apmndi:APMNEdge id="APMNEdge_SequenceFlow_2" apmnElement="SequenceFlow_2" sourceElement="_BPMNShape_SubProcess_2" targetElement="_BPMNShape_EndEvent_2">
+        <di:waypoint xsi:type="dc:Point" x="600.0" y="230.0"/>
+        <di:waypoint xsi:type="dc:Point" x="650.0" y="230.0"/>
+      </apmndi:APMNEdge>
+      <apmndi:APMNShape id="_BPMNShape_StartEvent_11" apmnElement="StartEvent_2">
+        <dc:Bounds height="36.0" width="36.0" x="108.0" y="212.0"/>
+        <apmndi:APMNLabel>
+          <dc:Bounds height="0.0" width="0.0" x="126.0" y="253.0"/>
+        </apmndi:APMNLabel>
+      </apmndi:APMNShape>
+      <apmndi:APMNEdge id="APMNEdge_SequenceFlow_3" apmnElement="SequenceFlow_3" sourceElement="_BPMNShape_StartEvent_11" targetElement="_BPMNShape_SubProcess_2">
+        <di:waypoint xsi:type="dc:Point" x="144.0" y="230.0"/>
+        <di:waypoint xsi:type="dc:Point" x="300.0" y="230.0"/>
+        <apmndi:APMNLabel>
+          <dc:Bounds height="21.0" width="33.0" x="192.0" y="204.0"/>
+        </apmndi:APMNLabel>
+      </apmndi:APMNEdge>
+    </apmndi:APMNPlane>
+  </apmndi:APMNDiagram>
+</apmn:definitions>

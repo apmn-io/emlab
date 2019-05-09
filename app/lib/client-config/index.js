@@ -24,6 +24,7 @@ function ClientConfig(options) {
 
   this._providers = {
     '_': new NoneProvider(),
+    'apmn.elementTemplates': new ElementTemplatesProvider(options),
     'bpmn.elementTemplates': new ElementTemplatesProvider(options)
   };
 
